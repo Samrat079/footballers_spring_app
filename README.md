@@ -52,7 +52,7 @@ Update `application.yml` with your database settings:
 ```yaml
 spring:
   mongodb:
-    uri: mongodb://username:password@localhost:27017/football_db
+    uri: mongodb://username:password@localhost:27017/footballer_db
 ```
 
 ---
