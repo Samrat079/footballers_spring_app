@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: footballer_db
+  mongodb:
+    uri: ${MONGO_URL};
+    auto-index-creation: true;
