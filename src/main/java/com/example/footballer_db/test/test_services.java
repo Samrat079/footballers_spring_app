@@ -22,4 +22,11 @@ public class test_services {
     void deleteTest(String id) {
         testRepository.deleteById(id);
     }
+
+    void updateTest(String id, test body) {
+        test temp = testRepository.findById(id).orElse(null);
+        if (temp == null) return;
+        body.setId(id);
+        testRepository.save(body);
+    }
 }

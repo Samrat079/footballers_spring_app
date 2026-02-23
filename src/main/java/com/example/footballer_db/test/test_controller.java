@@ -28,4 +28,10 @@ public class test_controller {
         testServices.deleteTest(id);
         return ResponseEntity.ok().build();
     }
+
+    @PostMapping("/{id}")
+    ResponseEntity<test> updateTest(@PathVariable String id, @RequestBody test body) {
+        testServices.updateTest(id, body);
+        return ResponseEntity.ok(body);
+    }
 }
