@@ -42,15 +42,21 @@ cd footballers_spring_app
 ```
 
 ### 3. Configure Database
+Here is your updated section converted to **MongoDB with `application.yml`** format:
 
-Update `application.properties` (or `application.yml`) with your database settings:
+---
 
-```properties
-spring.datasource.url=jdbc:mysql://localhost:3306/football_db
-spring.datasource.username=root
-spring.datasource.password=your_password
-spring.jpa.hibernate.ddl-auto=update
+Update `application.yml` with your database settings:
+
+
+```yaml
+spring:
+  mongodb:
+    uri: mongodb://username:password@localhost:27017/football_db
 ```
+
+---
+
 
 > 📌 If using H2 (in-memory database), no changes are needed.
 
@@ -99,7 +105,7 @@ curl -X GET http://localhost:8080/footballers
 ### Add a new player
 
 ```bash
-curl -X POST http://localhost:8080/footballers \
+curl -X POST http://localhost:8080/footballer \
  -H "Content-Type: application/json" \
  -d '{"name":"Lionel Messi","position":"Forward","team":"PSG"}'
 ```
@@ -139,12 +145,6 @@ src/
 ✔ Add **Swagger/OpenAPI documentation**
 ✔ Integrate **Spring Security (JWT)**
 ✔ Add front-end UI 
-
----
-
-## 🙌 Contributions
-
-Contributions are welcome! Feel free to open issues or submit pull requests.
 
 ---
 
