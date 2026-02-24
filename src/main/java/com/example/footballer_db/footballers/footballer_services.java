@@ -11,24 +11,24 @@ public class footballer_services {
     @Autowired
     public footballer_repository footballerRepository;
 
-    footballer getFootBallerById(String id) {
+    Footballer getFootBallerById(String id) {
         return footballerRepository.findById(id).orElse(null);
     }
 
-    List<footballer> getAllFootBallers() {
+    List<Footballer> getAllFootBallers() {
         return footballerRepository.findAll();
     }
 
-    List<footballer> searchByName(String Player) {
+    List<Footballer> searchByName(String Player) {
         return footballerRepository.searchByName(Player);
     }
 
-    void addFootBaller(footballer body) {
+    void addFootBaller(Footballer body) {
         footballerRepository.insert(body);
     }
 
-    void updateFootBaller(String id, footballer body) {
-        footballer temp = footballerRepository.findById(id).orElse(null);
+    void updateFootBaller(String id, Footballer body) {
+        Footballer temp = footballerRepository.findById(id).orElse(null);
 
         if (temp == null) return;
         body.setId(id);

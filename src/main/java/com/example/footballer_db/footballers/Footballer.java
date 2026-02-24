@@ -5,7 +5,7 @@ import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "footballer")
-public class footballer {
+public class Footballer {
     @Id
     private String id;
 
@@ -18,7 +18,7 @@ public class footballer {
 
     private double xG, xAG;
 
-    public footballer() {
+    public Footballer() {
     }
 
     public String getId() {
