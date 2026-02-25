@@ -19,9 +19,13 @@ public class footballer_services {
         return footballerRepository.findAll();
     }
 
-    List<Footballer> searchByName(String Player) {
-        return footballerRepository.searchByName(Player);
+    List<Footballer> findByPlayer(String player) {
+        return footballerRepository.findByPlayerContainingIgnoreCase(player);
     }
+
+//    List<Footballer> findByTeam(String team) {
+//        return footballerRepository.findByTeamContainingIgnoreCase(team);
+//    }
 
     void addFootBaller(Footballer body) {
         footballerRepository.insert(body);

@@ -10,15 +10,34 @@ public class Footballer {
     private String id;
 
     @TextIndexed
-    private String Player;
+    private String player;
 
-    private String Nation, Pos, Team;
+    private String nation, pos, team;
 
-    private int Age, MP, Starts, Min, Gls, Ast, PK, CrdY, CrdR;
+    private int age, mp, starts, min, gls, ast, pk, crdY, crdR;
 
     private double xG, xAG;
 
     public Footballer() {
+    }
+
+    public Footballer(String id, String player, String nation, String pos, String team, int age, int mp, int starts, int min, int gls, int ast, int pk, int crdY, int crdR, double xG, double xAG) {
+        this.id = id;
+        this.player = player;
+        this.nation = nation;
+        this.pos = pos;
+        this.team = team;
+        this.age = age;
+        this.mp = mp;
+        this.starts = starts;
+        this.min = min;
+        this.gls = gls;
+        this.ast = ast;
+        this.pk = pk;
+        this.crdY = crdY;
+        this.crdR = crdR;
+        this.xG = xG;
+        this.xAG = xAG;
     }
 
     public String getId() {
@@ -30,107 +49,107 @@ public class Footballer {
     }
 
     public String getPlayer() {
-        return Player;
+        return player;
     }
 
     public void setPlayer(String player) {
-        Player = player;
+        this.player = player;
     }
 
     public String getNation() {
-        return Nation;
+        return nation;
     }
 
     public void setNation(String nation) {
-        Nation = nation;
+        this.nation = nation;
     }
 
     public String getPos() {
-        return Pos;
+        return pos;
     }
 
     public void setPos(String pos) {
-        Pos = pos;
+        this.pos = pos;
     }
 
     public String getTeam() {
-        return Team;
+        return team;
     }
 
     public void setTeam(String team) {
-        Team = team;
+        this.team = team;
     }
 
     public int getAge() {
-        return Age;
+        return age;
     }
 
     public void setAge(int age) {
-        Age = age;
+        this.age = age;
     }
 
-    public int getMP() {
-        return MP;
+    public int getMp() {
+        return mp;
     }
 
-    public void setMP(int MP) {
-        this.MP = MP;
+    public void setMp(int mp) {
+        this.mp = mp;
     }
 
     public int getStarts() {
-        return Starts;
+        return starts;
     }
 
     public void setStarts(int starts) {
-        Starts = starts;
+        this.starts = starts;
     }
 
     public int getMin() {
-        return Min;
+        return min;
     }
 
     public void setMin(int min) {
-        Min = min;
+        this.min = min;
     }
 
     public int getGls() {
-        return Gls;
+        return gls;
     }
 
     public void setGls(int gls) {
-        Gls = gls;
+        this.gls = gls;
     }
 
     public int getAst() {
-        return Ast;
+        return ast;
     }
 
     public void setAst(int ast) {
-        Ast = ast;
+        this.ast = ast;
     }
 
-    public int getPK() {
-        return PK;
+    public int getPk() {
+        return pk;
     }
 
-    public void setPK(int PK) {
-        this.PK = PK;
+    public void setPk(int pk) {
+        this.pk = pk;
     }
 
     public int getCrdY() {
-        return CrdY;
+        return crdY;
     }
 
     public void setCrdY(int crdY) {
-        CrdY = crdY;
+        this.crdY = crdY;
     }
 
     public int getCrdR() {
-        return CrdR;
+        return crdR;
     }
 
     public void setCrdR(int crdR) {
-        CrdR = crdR;
+        this.crdR = crdR;
     }
 
     public double getxG() {
