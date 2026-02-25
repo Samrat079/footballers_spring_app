@@ -21,25 +21,6 @@ public class Footballer {
     public Footballer() {
     }
 
-    public Footballer(String id, String player, String nation, String pos, String team, int age, int mp, int starts, int min, int gls, int ast, int pk, int crdY, int crdR, double xG, double xAG) {
-        this.id = id;
-        this.player = player;
-        this.nation = nation;
-        this.pos = pos;
-        this.team = team;
-        this.age = age;
-        this.mp = mp;
-        this.starts = starts;
-        this.min = min;
-        this.gls = gls;
-        this.ast = ast;
-        this.pk = pk;
-        this.crdY = crdY;
-        this.crdR = crdR;
-        this.xG = xG;
-        this.xAG = xAG;
-    }
-
     public String getId() {
         return id;
     }

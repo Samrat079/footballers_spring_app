@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -37,16 +38,16 @@ public class footballer_controller {
 
     @PutMapping("/{id}")
     ResponseEntity<Footballer> updateFootBaller(@PathVariable String id, @RequestBody Footballer body) {
-        Footballer temp = footballerServices.getFootBallerById(id);
-        if (temp == null) return ResponseEntity.notFound().build();
+        Optional<Footballer> temp = footballerServices.getFootBallerById(id);
+        if (temp.isEmpty()) return ResponseEntity.notFound().build();
         footballerServices.updateFootBaller(id, body);
         return ResponseEntity.ok(body);
     }
 
     @DeleteMapping("/{id}")
-    ResponseEntity<Footballer> deleteFootBaller(@PathVariable String id) {
-        Footballer temp = footballerServices.getFootBallerById(id);
-        if (temp == null) return ResponseEntity.notFound().build();
+    ResponseEntity<Optional<Footballer>> deleteFootBaller(@PathVariable String id) {
+        Optional<Footballer> temp = footballerServices.getFootBallerById(id);
+        if (temp.isEmpty()) return ResponseEntity.notFound().build();
         footballerServices.deleteFootBaller(id);
         return ResponseEntity.ok(temp);
     }
