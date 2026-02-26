@@ -20,15 +20,10 @@ public class footballer_controller {
         return footballerServices.getAllFootBallers();
     }
 
-    @GetMapping("/search")
-    List<Footballer> searchByName(@RequestParam String player) {
-        return footballerServices.findByPlayer(player);
+    @GetMapping("/q")
+    List<Footballer> searchByName(@RequestParam String query) {
+        return footballerServices.findByString(query);
     }
-
-//    @GetMapping("/team")
-//    List<Footballer> searchByTeam(@RequestParam String team) {
-//        return footballerServices.findByTeam(team);
-//    }
 
     @PostMapping
     ResponseEntity<Footballer> addFootBaller(@RequestBody Footballer body) {
