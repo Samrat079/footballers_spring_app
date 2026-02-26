@@ -3,7 +3,6 @@ package com.example.footballer_db.footballers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,9 +17,7 @@ public class footballer_services {
     }
 
     List<Footballer> getAllFootBallers() {
-        List<Footballer> temp = footballerRepository.findAll();
-        Collections.shuffle(temp);
-        return temp;
+        return footballerRepository.findAll();
     }
 
     List<Footballer> findByString(String query) {
