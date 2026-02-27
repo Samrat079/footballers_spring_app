@@ -1,7 +1,7 @@
 package com.example.footballer_db.footballers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.UrlResource;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.core.io.Resource;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,9 +41,8 @@ public class footballer_controller {
     List<String> findDistinctPositions() { return footballerServices.findDistinctPositions();}
 
     @GetMapping("/data_set")
-    ResponseEntity<Resource> downloadDataSet() throws IOException {
-        Path path = Paths.get("footballer_dataset.csv");
-        Resource resource = new UrlResource(path.toUri());
+    ResponseEntity<Resource> downloadDataSet() {
+        Resource resource = new ClassPathResource("static/footballer_dataset.csv");
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=footballer_dataset.csv")
