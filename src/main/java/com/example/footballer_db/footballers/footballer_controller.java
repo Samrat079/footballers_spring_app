@@ -5,8 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @CrossOrigin(origins = "*")
 @RestController
@@ -34,6 +33,16 @@ public class footballer_controller {
 
     @GetMapping("/all_pos")
     List<String> findDistinctPositions() { return footballerServices.findDistinctPositions();}
+
+    @GetMapping("/all_options")
+    Map<String, List<String>> findDistinctOptions() {
+        Map<String, List<String>> temp = new HashMap<>();
+        temp.put("team", footballerServices.findDistinctTeam());
+        temp.put("nation", footballerServices.findDistinctNation());
+        temp.put("position", footballerServices.findDistinctPositions());
+
+        return temp;
+    }
 
     @PostMapping
     ResponseEntity<Footballer> addFootBaller(@RequestBody Footballer body) {
