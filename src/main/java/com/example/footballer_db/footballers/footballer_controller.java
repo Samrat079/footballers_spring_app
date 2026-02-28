@@ -25,15 +25,6 @@ public class footballer_controller {
         return footballerServices.findByString(query);
     }
 
-    @GetMapping("/all_teams")
-    List<String> findDistinctTeams() { return footballerServices.findDistinctTeam();}
-
-    @GetMapping("/all_nations")
-    List<String> findDistinctNation() { return footballerServices.findDistinctNation();}
-
-    @GetMapping("/all_pos")
-    List<String> findDistinctPositions() { return footballerServices.findDistinctPositions();}
-
     @GetMapping("/all_options")
     Map<String, List<String>> findDistinctOptions() {
         Map<String, List<String>> temp = new HashMap<>();
