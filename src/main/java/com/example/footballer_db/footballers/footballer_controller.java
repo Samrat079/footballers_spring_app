@@ -16,18 +16,8 @@ public class footballer_controller {
     private footballer_services footballerServices;
 
     @GetMapping
-    List<Footballer> getAll(@RequestParam(required = false) String query) {
-        return footballerServices.findByString(query);
-    }
-
-    @GetMapping("/all_options")
-    Map<String, List<String>> findDistinctOptions() {
-        Map<String, List<String>> temp = new HashMap<>();
-        temp.put("team", footballerServices.findDistinctTeam());
-        temp.put("nation", footballerServices.findDistinctNation());
-        temp.put("position", footballerServices.findDistinctPositions());
-
-        return temp;
+    public List<Footballer> searchFootballers(@RequestParam(required = false) Map<String, String> params) {
+        return footballerServices.advanced_search(params);
     }
 
     @PostMapping
