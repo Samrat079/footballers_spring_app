@@ -21,11 +21,10 @@ public class footballer_services {
         return footballerRepository.findById(id);
     }
 
-    List<Footballer> getAllFootBallers() {
-        return footballerRepository.findAll();
-    }
-
     List<Footballer> findByString(String query) {
+        if (query == null ) {
+            return footballerRepository.findAll();
+        }
         return footballerRepository.search(query);
     }
 

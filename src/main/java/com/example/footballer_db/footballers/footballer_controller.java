@@ -16,12 +16,7 @@ public class footballer_controller {
     private footballer_services footballerServices;
 
     @GetMapping
-    List<Footballer> getAll() {
-        return footballerServices.getAllFootBallers();
-    }
-
-    @GetMapping("/q")
-    List<Footballer> searchByName(@RequestParam String query) {
+    List<Footballer> getAll(@RequestParam(required = false) String query) {
         return footballerServices.findByString(query);
     }
 
